@@ -6,7 +6,7 @@ struct Node {
     struct Node *left, *right;
 };
 
-// create new tree node
+
 struct Node* createNode(int value) {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
     node->data = value;
@@ -22,7 +22,7 @@ void postorderTraversal(struct Node* root) {
     struct Node* stack2[100];
     int top1 = -1, top2 = -1;
 
-    // push root into first stack
+    
     stack1[++top1] = root;
 
     while (top1 != -1) {
@@ -35,7 +35,7 @@ void postorderTraversal(struct Node* root) {
             stack1[++top1] = current->right;
     }
 
-    // print nodes from second stack
+    
     while (top2 != -1) {
         printf("%d ", stack2[top2--]->data);
     }
